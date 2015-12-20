@@ -4,9 +4,9 @@ public class MyHashMap {
 	// This is to decide the table array max length
 	// And the hashCode method is to make sure the new index scope cannot exceed
 	// it.
-	public static final int COLLISION_FACTOR = 16;
+	public static final int CAPACITY = 16;
 
-	private Entry[] table = new Entry[COLLISION_FACTOR];
+	private Entry[] table = new Entry[CAPACITY];
 
 	/**
 	 * Put key value into map.
@@ -16,7 +16,11 @@ public class MyHashMap {
 	 *  2. Get the entry of table array by the hashcode.
 	 *  	2.1 If entry is null, new entry and add it here
 	 *  	2.2 If entry is not null
-	 *  		2.2.1 Loop the linked entry, get its next entry:
+	 *  		2.2.1 Check if the key equals to input key,
+	 *  				then update this entry to new entry (including the next link)
+	 *  		2.2.2 Loop the linked entry, get its next entry:
+	 *  		      refer 2.2.1
+	 *  			  If cannot find same key, add it to the last null element
 	 * 
 	 * 
 	 * </pre>
@@ -92,7 +96,7 @@ public class MyHashMap {
 	}
 
 	int hashCode(Object key) {
-		return key.hashCode() % COLLISION_FACTOR;
+		return key.hashCode() % CAPACITY;
 	}
 
 	/**
