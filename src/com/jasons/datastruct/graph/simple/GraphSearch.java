@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  * 
@@ -61,6 +62,28 @@ public class GraphSearch {
             }
         }
     }
+    
+    void depthSearch(NodeT start) {
+        // 记录所有访问过的元素
+        Set<NodeT> visited = new HashSet<NodeT>();
+        // 用队列存放所有依次要访问元素
+        Stack<NodeT> q = new Stack<NodeT>();
+        // 把当前的元素加入到队列尾
+        q.push(start);
+
+        while (!q.isEmpty()) {
+            NodeT cur = q.pop();
+            // 被访问过了，就不访问，防止死循环
+            if (!visited.contains(cur)) {
+                visited.add(cur);
+                System.out.println("查找的节点是：" + cur.word);
+                for (int i = cur.outgoing.size() -1; i >=0 ; i--) {
+                    // 把它的下一层，加入到队列中
+                    q.push(cur.outgoing.get(i).end);
+                }
+            }
+        }
+    }
 
     public static void main(String args[]) {
         // 构造需要点对象
@@ -104,7 +127,9 @@ public class GraphSearch {
         System.out.println("深度遍历如下：");
         List<NodeT> visited = new ArrayList<NodeT>();
         search.deptFisrtSearch(a, visited);
-
+        
+        System.out.println("深度遍历如下2：");
+        search.depthSearch(a);
     }
 }
 
