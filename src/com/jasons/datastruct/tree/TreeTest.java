@@ -1,9 +1,3 @@
-/*
- * @(#)Tree.java 1.0 Dec 22, 2015
- *
- * Copyright 2015 HP Inc. All rights reserved.
- * HP PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
 package com.jasons.datastruct.tree;
 
 import java.util.ArrayList;
