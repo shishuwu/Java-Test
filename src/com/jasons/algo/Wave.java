@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-
+/**
+ * 
+ * @author shishu
+ */
 public class Wave {
 
     private List<Integer> initList() {
