@@ -1,5 +1,7 @@
 package com.jasons.algo;
 
+import com.jasons.datastruct.tree.TreeNode;
+
 /**
  * <pre>
  * 

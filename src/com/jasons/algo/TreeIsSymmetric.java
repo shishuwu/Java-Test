@@ -2,6 +2,8 @@ package com.jasons.algo;
 
 import java.util.ArrayList;
 
+import com.jasons.datastruct.tree.TreeNode;
+
 /**
  * <pre>
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).

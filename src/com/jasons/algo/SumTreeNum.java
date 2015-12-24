@@ -1,11 +1,11 @@
 package com.jasons.algo;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.Stack;
 
 import org.junit.Test;
+
+import com.jasons.datastruct.tree.TreeNode;
 
 /**
  * <pre>
@@ -46,7 +46,7 @@ public class SumTreeNum {
 	 * 
 	 * @return
 	 */
-	public TreeNode initTree() {
+	public static TreeNode initTree() {
 		TreeNode root = new TreeNode(1);
 
 		TreeNode x = new TreeNode(2);
@@ -154,19 +154,7 @@ public class SumTreeNum {
 }
 
 
-/**
- * Definition for binary tree
- */
 
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-
-	TreeNode(int x) {
-		val = x;
-	}
-}
 
 /**
  * 
