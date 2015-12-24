@@ -1,7 +1,5 @@
 package com.jasons.algo.treetravel;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -12,7 +10,7 @@ import com.jasons.datastruct.tree.TreeNode;
 
 /**
  * <pre>
- * Given a binary tree, return the postorder traversal of its nodes� values.
+ * Given a binary tree, return the postorder 后序：左右中 traversal of its nodes’ values.
 		
 		Example :
 		
@@ -45,7 +43,6 @@ public class TreeTravel_PostOrder {
 
 			node = stack.pop();
 			stack2.push(node.val);
-			
 			
 			if (node.left != null) {
 				stack.push(node.left);
