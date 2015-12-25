@@ -41,9 +41,17 @@ public class Int2Roman {
     private static LinkedHashMap<Integer, String> intRomanMap = new LinkedHashMap<>();
 
     /**
+     * <pre>
      * NOTE:<br> 
-     * Only list 1000, 500, 100, is not enough. <br>
-     * Also need:       900, 400,  90, ...
+     * Only list 1000, 500, 100, ... 5, 1is not enough. <br>
+     * Also need: 900, 400,  90, ... 4
+     * 
+     * Cause: For 14,
+     * 
+     *   IF without 4, it will be "XIIII", 
+     *   IF with    4, it will be "XIV"
+     * 
+     * </pre>
      * 
      */
     static {
@@ -79,23 +87,22 @@ public class Int2Roman {
         }
         return buf.toString();
     }
-    
-    
-    //==================== Solution 2 =======================
+
+    // ==================== Solution 2 =======================
     public String intToRoman2(int n) {
-        int[] A = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-        String[] B = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] A = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+        String[] B = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX",
+                       "V", "IV", "I" };
         StringBuilder sb = new StringBuilder();
-        for(int i=0; i<A.length; i++) {
-            while(n >= A[i]) {
+        for (int i = 0; i < A.length; i++) {
+            while (n >= A[i]) {
                 sb.append(B[i]);
                 n -= A[i];
             }
         }
         return sb.toString();
     }
-    
-    
+
     @Test
     public void test() throws Exception {
         Int2Roman test = new Int2Roman();
