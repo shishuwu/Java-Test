@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/com/jasons/algo/Insertpos.java=UTF-8
-encoding//src/com/jasons/algo/arr/Find1In3.java=UTF-8
-encoding//src/com/jasons/algo/arr/Find1InN.java=UTF-8
-encoding//src/com/jasons/algo/arr/Find1in2n.java=UTF-8
+encoding//src/com/jasons/algo/findOne/Find1In3.java=UTF-8
+encoding//src/com/jasons/algo/findOne/Find1InN.java=UTF-8
+encoding//src/com/jasons/algo/findOne/Find1in2n.java=UTF-8
 encoding//src/com/jasons/algo/treetravel/TreeTravel_InOrder.java=UTF-8
 encoding//src/com/jasons/algo/treetravel/TreeTravel_PostOrder.java=UTF-8
 encoding//src/com/jasons/datastruct/graph/Graph.java=UTF-8

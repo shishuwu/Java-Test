@@ -1,9 +1,8 @@
-package com.jasons.algo.arr;
+package com.jasons.algo.findOne;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -25,17 +24,17 @@ import org.junit.Test;
  * 
  * 
  */
-public class Find1InN {
+public class Find1In3 {
     // DO NOT MODIFY THE LIST
-    public int singleNumber(final List<Integer> list, int duplicatedTimes) {
+    public int singleNumber(final List<Integer> a) {
         int[] bits = new int[32];
 
-        for (int num : list) {
-            // count each number ->
+        for (int num : a) {
+            // count each number -> 
             // suppose 3: ... 0000 0000 0011 (from right to left)
             for (int i = 0; i < 32; i++) {
                 bits[i] += (1 & (num >> i));
-                bits[i] %= duplicatedTimes;
+                bits[i] %= 3;
             }
         }
 
@@ -47,24 +46,29 @@ public class Find1InN {
         return number;
     }
 
+    // ========================= Solution 2 ==========================
+    public int singleNumber(int[] A) {
+        int ones = 0;
+        int twos = 0;
+        int xthrees = 0;
+        for (int i = 0; i < A.length; i++) {
+            twos ^= (ones & A[i]);
+            ones ^= A[i];
+            xthrees = ~(ones & twos);
+            twos &= xthrees;
+            ones &= xthrees;
+        }
+        return ones;
+    }
+
     @Test
     public void test() throws Exception {
         List<Integer> a = new ArrayList<>();
+        a.add(1);
         a.add(2);
-        a.add(2);
-        a.add(2);
-        a.add(2);
-        a.add(2);
-
-        a.add(3);
-
-        a.add(8);
-        a.add(8);
-        a.add(8);
-        a.add(8);
-        a.add(8);
-
-        Assert.assertSame(3, new Find1InN().singleNumber(a, 5));
+        a.add(1);
+        a.add(1);
+        System.out.println(singleNumber(a));
     }
 }
 /**

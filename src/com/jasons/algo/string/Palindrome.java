@@ -1,4 +1,4 @@
-package com.jasons.algo.arr;
+package com.jasons.algo.string;
 
 import org.junit.Test;
 
