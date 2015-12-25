@@ -1,7 +1,5 @@
 package com.jasons.algo.string.roman;
 
-import static org.junit.Assert.*;
-
 import java.util.HashMap;
 
 import org.junit.Test;
@@ -38,7 +36,7 @@ import org.junit.Test;
  * @author shishu
  */
 public class Roman2Int {
-    private static HashMap<Character, Integer> charMap = new HashMap<>();
+    public static HashMap<Character, Integer> charMap = new HashMap<>();
 
     static {
         charMap.put('I', 1);
