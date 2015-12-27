@@ -1,5 +1,10 @@
 package com.jasons.algo.string;
 
+import java.util.Arrays;
+
+import org.junit.Assert;
+import org.junit.Test;
+
 /**
  * Implement strStr().
  * 
@@ -27,25 +32,53 @@ package com.jasons.algo.string;
  */
 public class FindStrInStr {
 
-    /**
-     * <pre>
-     * x: how are you doing?
-     * y: are
-     * 
-     * -> 4
-     * 
-     * </pre>
-     */
-    public int strStr(final String haystack, final String needle) {
-        // cursor
-        char[] full = haystack.toCharArray();
-        int fullLen = full.length;
+	/**
+	 * <pre>
+	 * x: how are you doing?
+	 * y: are
+	 * 
+	 * -> 4
+	 * 
+	 * </pre>
+	 */
+	public int strStr(final String haystack, final String needle) {
+		// cursor
+		char[] full = haystack.toCharArray();
+		int fullLen = full.length;
 
-        char[] sub = needle.toCharArray();
-        int subLen = sub.length;
+		char[] sub = needle.toCharArray();
+		int subLen = sub.length;
 
-        for (int i = 0; i < fullLen - subLen; i++) {
+		for (int i = 0; i < fullLen - subLen + 1; i++) {
+			char[] tempsub = Arrays.copyOfRange(full, i, i + subLen);
+			// if (Arrays.equals(tempsub, sub)) {
+			if (this.equals(tempsub, sub)) {
+				return i;
+			}
+		}
+		return -1;
+	}
 
-        }
-    }
+	public boolean equals(char[] a, char[] b) {
+		if (a == null && b == null) {
+			return true;
+		}
+		if (a.length == b.length) {
+			for (int i = 0; i < a.length; i++) {
+				if (a[i] != b[i]) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+
+	@Test
+	public void test() throws Exception {
+		FindStrInStr test = new FindStrInStr();
+		// Assert.assertSame(-1, test.strStr("bbbbbbbbab", "baba"));
+		Assert.assertSame(1, test.strStr("aaba", "ab"));
+		Assert.assertSame(0, test.strStr("b", "b"));
+	}
 }
