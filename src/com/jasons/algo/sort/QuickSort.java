@@ -55,6 +55,7 @@ public class QuickSort {
 			}
 			// 将比枢轴小的元素移到低端，此时right位相当于空，等待低位比pivotkey大的数补上
 			array[left] = array[right];
+			
 			while (left < right && array[left] <= pivotValue) {
 				++left;
 			}
