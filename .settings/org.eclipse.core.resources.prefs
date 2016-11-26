@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/atla/Solution.java=UTF-8
 encoding//src/com/jasons/algo/Insertpos.java=UTF-8
 encoding//src/com/jasons/algo/arr/RemoveElement.java=UTF-8
 encoding//src/com/jasons/algo/findOne/Find1In3.java=UTF-8
@@ -9,4 +10,5 @@ encoding//src/com/jasons/algo/treetravel/TreeTravel_PostOrder.java=UTF-8
 encoding//src/com/jasons/concurrency/forkjoin/count/CountTask.java=UTF-8
 encoding//src/com/jasons/datastruct/graph/Graph.java=UTF-8
 encoding//src/com/jasons/datastruct/graph/simple/GraphSearch.java=UTF-8
+encoding//src/com/jasons/leetcode/CoinChange.java=UTF-8
 encoding/README.html=UTF-8
